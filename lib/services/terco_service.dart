@@ -10,8 +10,8 @@ class TercoService {
       final String jsonString = await rootBundle.loadString(assetPath);
       final Map<String, dynamic> jsonData = json.decode(jsonString);
       return Terco.fromJson(jsonData);
-    } catch (e) {
-      throw Exception('Erro ao carregar terço: $e');
+    } catch (e, stackTrace) {
+      throw Exception('Erro ao carregar terço de $assetPath: $e\n$stackTrace');
     }
   }
 }

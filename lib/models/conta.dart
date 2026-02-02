@@ -18,11 +18,20 @@ class Conta {
   });
 
   factory Conta.fromJson(Map<String, dynamic> json) {
+    final tipoString = json['tipo'] as String?;
+    final tipo = TipoConta.values.firstWhere(
+      (e) => e.name == tipoString,
+      orElse: () {
+        // Log warning for invalid type
+        if (tipoString != null) {
+          print('Aviso: Tipo de conta inválido "$tipoString", usando "pequena" como padrão');
+        }
+        return TipoConta.pequena;
+      },
+    );
+    
     return Conta(
-      tipo: TipoConta.values.firstWhere(
-        (e) => e.name == json['tipo'],
-        orElse: () => TipoConta.pequena,
-      ),
+      tipo: tipo,
       oracoes: List<String>.from(json['oracoes'] ?? []),
       ordem: json['ordem'] ?? 0,
     );

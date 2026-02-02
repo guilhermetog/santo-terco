@@ -11,12 +11,15 @@ Implementar `GestureDetector` ou `Draggable`/`DragTarget` para permitir que o us
 ```dart
 GestureDetector(
   onHorizontalDragEnd: (details) {
-    if (details.primaryVelocity! < 0) {
-      // Arrastar para a esquerda - próxima conta
-      _proximaConta();
-    } else if (details.primaryVelocity! > 0) {
-      // Arrastar para a direita - conta anterior
-      _contaAnterior();
+    final velocity = details.primaryVelocity;
+    if (velocity != null) {
+      if (velocity < 0) {
+        // Arrastar para a esquerda - próxima conta
+        _proximaConta();
+      } else if (velocity > 0) {
+        // Arrastar para a direita - conta anterior
+        _contaAnterior();
+      }
     }
   },
   child: // Widget do terço
