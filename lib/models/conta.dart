@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 /// Tipos de conta do terço
 enum TipoConta {
   cruz,
@@ -24,7 +26,7 @@ class Conta {
       orElse: () {
         // Log warning for invalid type
         if (tipoString != null) {
-          print('Aviso: Tipo de conta inválido "$tipoString", usando "pequena" como padrão');
+          debugPrint('Aviso: Tipo de conta inválido "$tipoString", usando "pequena" como padrão');
         }
         return TipoConta.pequena;
       },
