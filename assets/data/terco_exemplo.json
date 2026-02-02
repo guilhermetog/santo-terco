@@ -1,0 +1,62 @@
+{
+  "nome": "Terço Tradicional",
+  "descricao": "Terço católico tradicional com 59 contas",
+  "assets": {
+    "cruz": "assets/images/cruz.png",
+    "conta_grande": "assets/images/conta_grande.png",
+    "conta_pequena": "assets/images/conta_pequena.png",
+    "fundo": "assets/images/fundo.png"
+  },
+  "contas": [
+    {
+      "ordem": 1,
+      "tipo": "cruz",
+      "oracoes": [
+        "Pelo sinal da Santa Cruz, livrai-nos Deus, Nosso Senhor, dos nossos inimigos.",
+        "Em nome do Pai, do Filho e do Espírito Santo. Amém."
+      ]
+    },
+    {
+      "ordem": 2,
+      "tipo": "grande",
+      "oracoes": [
+        "Creio em Deus Pai todo-poderoso, criador do céu e da terra..."
+      ]
+    },
+    {
+      "ordem": 3,
+      "tipo": "grande",
+      "oracoes": [
+        "Pai Nosso, que estais nos céus, santificado seja o vosso nome..."
+      ]
+    },
+    {
+      "ordem": 4,
+      "tipo": "pequena",
+      "oracoes": [
+        "Ave Maria, cheia de graça, o Senhor é convosco..."
+      ]
+    },
+    {
+      "ordem": 5,
+      "tipo": "pequena",
+      "oracoes": [
+        "Ave Maria, cheia de graça, o Senhor é convosco..."
+      ]
+    },
+    {
+      "ordem": 6,
+      "tipo": "pequena",
+      "oracoes": [
+        "Ave Maria, cheia de graça, o Senhor é convosco..."
+      ]
+    },
+    {
+      "ordem": 7,
+      "tipo": "grande",
+      "oracoes": [
+        "Glória ao Pai, ao Filho e ao Espírito Santo..."
+      ]
+    }
+  ]
+}
