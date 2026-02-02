@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 /// Modelo de layout visual do terço
 class TercoLayout {
   final String nome;
@@ -11,10 +13,22 @@ class TercoLayout {
   });
 
   factory TercoLayout.fromJson(Map<String, dynamic> json) {
+    final nome = json['nome'] as String?;
+    final descricao = json['descricao'] as String?;
+    final assetsData = json['assets'];
+    
+    if (nome == null || nome.isEmpty) {
+      debugPrint('Aviso: Layout sem nome, usando valor padrão');
+    }
+    
+    if (assetsData == null || assetsData is! Map) {
+      debugPrint('Aviso: Layout sem assets válidos, usando mapa vazio');
+    }
+    
     return TercoLayout(
-      nome: json['nome'] ?? '',
-      descricao: json['descricao'] ?? '',
-      assets: Map<String, String>.from(json['assets'] ?? {}),
+      nome: nome ?? 'Layout sem nome',
+      descricao: descricao ?? '',
+      assets: assetsData is Map ? Map<String, String>.from(assetsData) : {},
     );
   }
 
