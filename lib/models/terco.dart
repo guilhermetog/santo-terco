@@ -1,17 +1,15 @@
 import 'conta.dart';
 
-/// Modelo do terço completo
+/// Modelo do conteúdo do terço (orações e sequência de contas)
 class Terco {
   final String nome;
   final String descricao;
   final List<Conta> contas;
-  final Map<String, String> assets;
 
   const Terco({
     required this.nome,
     required this.descricao,
     required this.contas,
-    required this.assets,
   });
 
   factory Terco.fromJson(Map<String, dynamic> json) {
@@ -22,7 +20,6 @@ class Terco {
               ?.map((c) => Conta.fromJson(c as Map<String, dynamic>))
               .toList() ??
           [],
-      assets: Map<String, String>.from(json['assets'] ?? {}),
     );
   }
 
@@ -31,7 +28,6 @@ class Terco {
       'nome': nome,
       'descricao': descricao,
       'contas': contas.map((c) => c.toJson()).toList(),
-      'assets': assets,
     };
   }
 }

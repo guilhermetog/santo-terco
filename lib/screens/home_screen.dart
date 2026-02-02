@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/terco.dart';
+import '../models/terco_layout.dart';
 import '../models/conta.dart';
 import '../services/terco_service.dart';
 import '../widgets/conta_widget.dart';
@@ -15,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final TercoService _tercoService = TercoService();
   Terco? _terco;
+  TercoLayout? _layout;
   int _contaAtual = 0;
   bool _isLoading = true;
   String? _errorMessage;
@@ -27,9 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _carregarTerco() async {
     try {
-      final terco = await _tercoService.carregarTerco('assets/data/terco_exemplo.json');
+      // Carrega conteúdo e layout separadamente
+      final terco = await _tercoService.carregarConteudo('assets/data/terco_conteudo.json');
+      final layout = await _tercoService.carregarLayout('assets/data/layout_tradicional.json');
+      
       setState(() {
         _terco = terco;
+        _layout = layout;
         _isLoading = false;
       });
     } catch (e) {
@@ -82,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Verifique se o arquivo de dados existe e está no formato correto.',
+                  'Verifique se os arquivos de dados existem e estão no formato correto.',
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 16),
@@ -110,7 +116,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_terco!.nome),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(_terco!.nome),
+            if (_layout != null)
+              Text(
+                _layout!.nome,
+                style: const TextStyle(fontSize: 12),
+              ),
+          ],
+        ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Column(
