@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 
 /// Modelo de layout visual do terço
 class TercoLayout {
+  static const String _defaultNome = 'Layout sem nome';
+  
   final String nome;
   final String descricao;
   final Map<String, String> assets;
@@ -26,7 +28,7 @@ class TercoLayout {
     }
     
     return TercoLayout(
-      nome: nome ?? 'Layout sem nome',
+      nome: nome ?? _defaultNome,
       descricao: descricao ?? '',
       assets: assetsData is Map ? Map<String, String>.from(assetsData) : {},
     );
