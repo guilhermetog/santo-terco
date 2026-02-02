@@ -1,0 +1,10 @@
+{
+  "nome": "Layout Tradicional Madeira",
+  "descricao": "Visual tradicional com contas de madeira",
+  "assets": {
+    "cruz": "assets/images/cruz.png",
+    "conta_grande": "assets/images/conta_grande.png",
+    "conta_pequena": "assets/images/conta_pequena.png",
+    "fundo": "assets/images/fundo.png"
+  }
+}

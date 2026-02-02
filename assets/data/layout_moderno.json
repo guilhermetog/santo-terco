@@ -1,0 +1,10 @@
+{
+  "nome": "Layout Moderno Cristal",
+  "descricao": "Visual moderno com contas de cristal",
+  "assets": {
+    "cruz": "assets/images/cruz_cristal.png",
+    "conta_grande": "assets/images/conta_grande_cristal.png",
+    "conta_pequena": "assets/images/conta_pequena_cristal.png",
+    "fundo": "assets/images/fundo_azul.png"
+  }
+}
