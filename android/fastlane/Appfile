@@ -1,0 +1,3 @@
+app_identifier("com.example.santo_terco")
+json_key_file("service-account.json")
+package_name("com.example.santo_terco")

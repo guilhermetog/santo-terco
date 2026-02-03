@@ -8,6 +8,30 @@ Este aplicativo permite a recitação do terço de forma digital e interativa. O
 
 **Arquitetura Separada de Conteúdo e Layout:** O aplicativo separa o conteúdo (orações e sequência de contas) do layout visual (aparência e assets). Isso permite rezar o mesmo terço com diferentes visuais.
 
+## 🚀 Entrega Contínua
+
+Este projeto está configurado com entrega contínua automática para o Google Play usando GitHub Actions e Fastlane.
+
+### Fluxo de Deploy Automatizado
+
+```
+feature → internal → beta → main
+   ↓         ↓        ↓      ↓
+         Internal  Beta  Production
+          Track    Track   Track
+```
+
+- **Internal Track**: Deploy automático ao mergear PR para `internal`
+- **Beta Track**: Deploy automático ao mergear PR para `beta`
+- **Production Track**: Deploy automático ao mergear PR para `main`
+
+### Documentação de Deploy
+
+- 📋 **[CONFIGURACAO_MANUAL.md](CONFIGURACAO_MANUAL.md)**: Guia completo de configuração manual do GitHub e Google Play Console
+- 📚 **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**: Documentação técnica do processo de deployment
+
+Para configurar o sistema de entrega contínua, siga os passos detalhados em [CONFIGURACAO_MANUAL.md](CONFIGURACAO_MANUAL.md).
+
 ## Estrutura do Projeto
 
 ### Modelos de Dados

@@ -42,3 +42,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Signing and deployment secrets
+/android/key.properties
+/android/app/upload-keystore.jks
+/android/service-account.json
+/android/fastlane/report.xml
+/android/fastlane/test_output
+/android/Gemfile.lock
