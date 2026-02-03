@@ -1,0 +1,17 @@
+# Android Keystore Properties
+# Este arquivo é usado para configurar o keystore de assinatura do Android
+# IMPORTANTE: Este arquivo contém informações sensíveis e NÃO deve ser commitado no Git
+#
+# Para CI/CD, este arquivo é gerado automaticamente pelos GitHub Actions
+# Para desenvolvimento local, preencha com suas informações do keystore
+
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=upload
+storeFile=upload-keystore.jks
+
+# Instruções:
+# 1. Copie este arquivo para android/key.properties
+# 2. Substitua os valores YOUR_* com suas senhas reais
+# 3. Certifique-se de que upload-keystore.jks está em android/app/
+# 4. NUNCA commite key.properties no Git (já está no .gitignore)
